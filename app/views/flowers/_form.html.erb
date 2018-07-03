@@ -1,0 +1,15 @@
+<%= render "errors/error" %>
+
+<%= form_for @flower do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :color %>
+  <%= f.text_field :color %>
+
+  <%= f.label :pollen_capacity %>
+  <%= f.text_field :pollen_capacity %>
+
+  <%= f.submit %>
+
+<% end %>
