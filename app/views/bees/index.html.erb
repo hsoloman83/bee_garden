@@ -1,0 +1,9 @@
+<h1>The Bees in the Kingdom</h1>
+
+<%= link_to "Spawn new Bee", new_bee_path %>
+
+<ul>
+  <% @bees.each do |bee| %>
+    <li><%= link_to bee.name, bee %></li>
+  <% end %>
+</ul>
