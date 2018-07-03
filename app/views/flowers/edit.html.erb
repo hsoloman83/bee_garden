@@ -1,0 +1,10 @@
+<h1>Edit a Flower</h1>
+
+<%= link_to "Go Back", @flower %>
+
+<%= render "form" %>
+
+
+<%= form_tag flower_path(@flower), method: "delete" do %>
+  <%= submit_tag "Delete Flower"%>
+<% end %>
