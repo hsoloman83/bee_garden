@@ -1,0 +1,14 @@
+<h1><%= @bee.name %></h1>
+<h2><%= @bee.category %></h2>
+
+<p>I live at <%= link_to @bee.hive.name, @bee.hive %></p>
+
+<label>But I work at: </label><br>
+<ul>
+  <% @bee.flowers.each do |flower| %>
+    <li><%= link_to flower.name, flower %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Back to all Bees", bees_path %>
+<%= link_to "Edit this Bee", edit_bee_path(@bee) %>
