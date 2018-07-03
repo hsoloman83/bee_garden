@@ -45,7 +45,7 @@ class BeesController < ApplicationController
 
   private
   def bee_params
-    params.require(:bee).permit(:name, :category, :queen, :hive_id)
+    params.require(:bee).permit(:name, :category, :queen, :hive_id, flower_ids: [])
   end
 
   def set_bee

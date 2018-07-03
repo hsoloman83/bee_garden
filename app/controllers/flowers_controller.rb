@@ -1,11 +1,13 @@
 class FlowersController < ApplicationController
   before_action :set_flower, only: [:show, :edit, :update, :destroy]
+  before_action :set_bees, only:[:new, :edit]
 
   def index
     @flowers = Flower.all
   end
 
   def show
+      @bees = @flower.bees
   end
 
   def new
@@ -43,11 +45,15 @@ class FlowersController < ApplicationController
   private
 
   def flower_params
-    params.require(:flower).permit(:name, :color, :pollen_capacity)
+    params.require(:flower).permit(:name, :color, :pollen_capacity, bee_ids: [])
   end
 
   def set_flower
     @flower = Flower.find(params[:id])
+  end
+
+  def set_bees
+      @bees = Bee.all
   end
 
 end

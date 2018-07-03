@@ -10,6 +10,8 @@
   <%= f.label :pollen_capacity %>
   <%= f.text_field :pollen_capacity %>
 
+  <%= f.collection_check_boxes(:bee_ids, @bees, :id, :name) %>
+
   <%= f.submit %>
 
 <% end %>

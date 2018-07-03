@@ -2,6 +2,11 @@
 <h3><%= @flower.color %></h3>
 <h3><%= @flower.pollen_capacity %></h3>
 
+<ul>
+    <%@bees.each do |bee|%>
+        <li> <%= link_to bee.name, bee %> </li> 
+    <% end %>
+</ul>
 
 
 <%= link_to "All Flowers", flowers_path %>
